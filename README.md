@@ -54,6 +54,7 @@ $$ tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} $$
 3. Custom Activation Function
 
 You can design your own custom activation function based on your specific needs. It could be a combination of existing functions or a completely new mathematical expression.
+
 4. Leaky Sigmoid
 
 A leaky version of the sigmoid can introduce a small slope for negative input values, which can sometimes help with training:
