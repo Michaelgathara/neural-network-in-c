@@ -6,6 +6,6 @@ double sigmoid(double x) {
 }
 
 int main() {
-    std::cout << sigmoid(1) << std::endl;
+    std::cout << sigmoid(5) << std::endl;
     return 0;
 }
