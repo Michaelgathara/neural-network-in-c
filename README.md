@@ -58,7 +58,14 @@ You can design your own custom activation function based on your specific needs.
 
 A leaky version of the sigmoid can introduce a small slope for negative input values, which can sometimes help with training:
 
-$$ \alpha \cdot x & \text{if } x < 0 \\  \frac{1}{1 + e^{-x}} & \text{if } x \geq 0  \end{cases} \] $$
+$$ \[
+\sigma(x) =
+\begin{cases}
+\alpha \cdot x & \text{if } x < 0 \\
+\frac{1}{1 + e^{-x}} & \text{if } x \geq 0
+\end{cases}
+\]
+$$
 
 Here, `\(\alpha\)` is a small constant, such as 0.01.
 ### Example: Parametric Sigmoid
