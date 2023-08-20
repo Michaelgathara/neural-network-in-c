@@ -1,0 +1,6 @@
+Z:/Projects/neural-network-in-c/cmake-build-debug/CMakeFiles/neural_network_in_c.dir
+Z:/Projects/neural-network-in-c/cmake-build-debug/CMakeFiles/edit_cache.dir
+Z:/Projects/neural-network-in-c/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+Z:/Projects/neural-network-in-c/cmake-build-debug/notepad/CMakeFiles/notepad.dir
+Z:/Projects/neural-network-in-c/cmake-build-debug/notepad/CMakeFiles/edit_cache.dir
+Z:/Projects/neural-network-in-c/cmake-build-debug/notepad/CMakeFiles/rebuild_cache.dir

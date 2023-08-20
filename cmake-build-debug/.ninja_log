@@ -1,0 +1,23 @@
+# ninja log v5
+4	722	7142625241559768	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+722	934	7142625243649314	neural_network_in_c.exe	8f981d7f21ed4b71
+0	644	7142661179778182	notepad/CMakeFiles/notepad.dir/test.cpp.obj	94fe8fa1c4f0f4f2
+644	877	7142661182072632	notepad/notepad.exe	35feea4b537c016c
+3	738	7142676335843350	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+738	894	7142676337385130	neural_network_in_c.exe	8f981d7f21ed4b71
+3	777	7142693094852374	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+778	1004	7142693097090010	neural_network_in_c.exe	8f981d7f21ed4b71
+3	751	7142693201700625	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+751	1046	7142693204645497	neural_network_in_c.exe	8f981d7f21ed4b71
+3	566	7142693307864917	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+566	689	7142693309075341	neural_network_in_c.exe	8f981d7f21ed4b71
+3	591	7142693408123760	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+591	713	7142693409325838	neural_network_in_c.exe	8f981d7f21ed4b71
+3	583	7142694276502315	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+583	719	7142694277842603	neural_network_in_c.exe	8f981d7f21ed4b71
+2	560	7142695161874252	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+560	683	7142695163081304	neural_network_in_c.exe	8f981d7f21ed4b71
+3	538	7142695342255136	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+538	662	7142695343463020	neural_network_in_c.exe	8f981d7f21ed4b71
+3	528	7142695444108462	CMakeFiles/neural_network_in_c.dir/main.cpp.obj	7b5a89fdb2e9f9d8
+528	657	7142695445373036	neural_network_in_c.exe	8f981d7f21ed4b71
