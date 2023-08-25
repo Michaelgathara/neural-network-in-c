@@ -7,8 +7,8 @@ class NeuralNetwork {
 private:
     std::vector<std::vector<double>> weights_hidden;
     std::vector<double> weights_output;
-    double bias_hidden;
-    double bias_output;
+    double hidden_bias;
+    double output_bias;
     std::mt19937 gen;
     std::uniform_real_distribution<> dis;
 
@@ -26,8 +26,8 @@ public:
             weights_output[i] = dis(gen);
         }
 
-        bias_hidden = dis(gen);
-        bias_output = dis(gen);
+        hidden_bias = dis(gen);
+        output_bias = dis(gen);
     }
 
 
@@ -41,7 +41,7 @@ public:
             for (int j = 0; j < input.size(); j++) {
                 hidden_values[i] += input[j] * weights_hidden[i][j];
             }
-            hidden_values[i] += bias_hidden;
+            hidden_values[i] += hidden_bias;
             hidden_values[i] = sigmoid(hidden_values[i]);
         }
 
@@ -49,7 +49,7 @@ public:
         for (int i = 0; i < hidden_values.size(); i++) {
             output_value += hidden_values[i] * weights_output[i];
         }
-        output_value += bias_output;
+        output_value += output_bias;
         output_value = sigmoid(output_value);
 
         return {output_value};
