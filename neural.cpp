@@ -1,3 +1,13 @@
+/**
+ * @file neural.cpp
+ * @author Michael Gathara (michael@michaelgathara.com)
+ * @brief 
+ * @version 0.1
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -5,8 +15,8 @@
 
 class NeuralNetwork {
 private:
-    std::vector<std::vector<double>> weights_hidden;
-    std::vector<double> weights_output;
+    std::vector<std::vector<double>> hidden_weights;
+    std::vector<double> output_weights;
     double hidden_bias;
     double output_bias;
     std::mt19937 gen;
@@ -14,16 +24,16 @@ private:
 
 public:
     NeuralNetwork(int input_nodes, int hidden_nodes, int output_nodes) : gen(std::random_device{}()), dis(-1.0, 1.0) {
-        weights_hidden.resize(hidden_nodes, std::vector<double>(input_nodes));
+        hidden_weights.resize(hidden_nodes, std::vector<double>(input_nodes));
         for (int i = 0; i < hidden_nodes; i++) {
             for (int j = 0; j < input_nodes; j++) {
-                weights_hidden[i][j] = dis(gen);
+                hidden_weights[i][j] = dis(gen);
             }
         }
 
-        weights_output.resize(output_nodes);
+        output_weights.resize(output_nodes);
         for (int i = 0; i < output_nodes; i++) {
-            weights_output[i] = dis(gen);
+            output_weights[i] = dis(gen);
         }
 
         hidden_bias = dis(gen);
@@ -36,10 +46,10 @@ public:
     }
 
     std::vector<double> forward(const std::vector<double>& input) {
-        std::vector<double> hidden_values(weights_hidden.size(), 0.0);
-        for (int i = 0; i < weights_hidden.size(); i++) {
+        std::vector<double> hidden_values(hidden_weights.size(), 0.0);
+        for (int i = 0; i < hidden_weights.size(); i++) {
             for (int j = 0; j < input.size(); j++) {
-                hidden_values[i] += input[j] * weights_hidden[i][j];
+                hidden_values[i] += input[j] * hidden_weights[i][j];
             }
             hidden_values[i] += hidden_bias;
             hidden_values[i] = sigmoid(hidden_values[i]);
@@ -47,7 +57,7 @@ public:
 
         double output_value = 0.0;
         for (int i = 0; i < hidden_values.size(); i++) {
-            output_value += hidden_values[i] * weights_output[i];
+            output_value += hidden_values[i] * output_weights[i];
         }
         output_value += output_bias;
         output_value = sigmoid(output_value);
