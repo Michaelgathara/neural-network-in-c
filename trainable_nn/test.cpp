@@ -34,8 +34,10 @@ std::vector<std::vector<double>> read_csv(const std::string& filename) {
 
 int main() {
     
-    std::string training_file = "-8976732775143038538.csv";
-    std::string testing_file = "testing_data.csv";
+    // std::string training_file = "data/training_data.csv";
+    // std::string testing_file = "data/testing_data.csv";
+    std::string training_file = "data/housing_price_dataset_train.csv";
+    std::string testing_file = "data/housing_price_dataset_test.csv";
 
     std::vector<std::vector<double>> training_data = read_csv(training_file);
     std::vector<std::vector<double>> testing_data = read_csv(testing_file);
@@ -56,8 +58,8 @@ int main() {
         testing_targets[i] = testing_data[i].back();
     }
 
-    NeuralNetwork nn(5, 10, 1, 0.01);
-    nn.train(training_inputs, training_targets, 1000);
+    NeuralNetwork nn(5, 10, 1, 0.001);
+    nn.train(training_inputs, training_targets, 10);
 
     double total_loss = 0.0;
     for (int i = 0; i < testing_inputs.size(); i++) {
@@ -65,8 +67,10 @@ int main() {
         double actual = testing_targets[i];
         double loss = nn.compute_loss(predicted, actual);
         total_loss += loss;
-    }
-    std::cout << "Average loss: " << total_loss / testing_inputs.size() << std::endl;
+    } 
+    // https://stackoverflow.com/questions/554063/how-do-i-print-a-double-value-with-full-precision-using-cout
+    std::cout.precision(std::numeric_limits<double>::max_digits10 - 1);
+    std::cout << "Average loss: " << std::scientific << total_loss / testing_inputs.size() << std::endl;
 
     return 0;
 }

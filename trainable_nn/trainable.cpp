@@ -91,6 +91,7 @@ void NeuralNetwork::train(const std::vector<std::vector<double>>& inputs, const 
             total_loss += compute_loss(output[0], targets[i]);
             update_weights(inputs[i], targets[i]);
         }
-        std::cout << "Epoch " << epoch << " Loss: " << total_loss / inputs.size() << '\n' << std::flush;
+        std::cout.precision(std::numeric_limits<double>::max_digits10 - 1);
+        std::cout << "Epoch " << epoch << " Loss: " << std::scientific << total_loss / inputs.size() << '\n' << std::flush;
     }
 }
